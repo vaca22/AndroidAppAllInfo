@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
                val b= packageInfo.packageName //获取应用包名，可用于卸载和启动应用
                 val c=packageInfo.versionName //获取应用版本名
                 val d=packageInfo.versionCode //获取应用版本号
+                val e=packageInfo.applicationInfo.loadIcon(packageManager)
                 Log.e("gaga","$a   $b   $c   $d")
 
             } else { // 系统应用
