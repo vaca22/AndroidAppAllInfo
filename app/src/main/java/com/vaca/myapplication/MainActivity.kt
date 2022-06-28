@@ -1,7 +1,9 @@
 package com.vaca.myapplication
 
+import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -41,6 +43,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun deleteApp(){
+        val uri: Uri = Uri.fromParts("package", "com.jingdong.app.mall", null)
+        val intent = Intent(Intent.ACTION_DELETE, uri)
+        startActivity(intent)
+    }
+
 
 
 
@@ -48,7 +56,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getPackages()
-
+        deleteApp()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
